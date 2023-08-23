@@ -38,4 +38,9 @@ public class myuserServiceImpl implements myuserService {
         }
         return dto;
     }
+
+    @Override
+    public void delete(Long id) {
+        repo.deleteById(id);
+    }
 }

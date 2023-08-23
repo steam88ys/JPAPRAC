@@ -7,4 +7,6 @@ import java.util.List;
 public interface myuserService {
     public void insert(myuserDTO dto);
     public List<myuserDTO> list();
+
+    public void delete(Long id);
 }

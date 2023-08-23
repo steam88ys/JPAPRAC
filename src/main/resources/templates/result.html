@@ -11,10 +11,11 @@
 <h1 th:text="'List'"/>
 <div class="table-responsive">
     <table class="table table-dark table-hover">
-        <tr><td>userid</td><td>username</td></tr>
+        <tr><td>userid</td><td>username</td><td>ETC</td></tr>
         <tr th:each="p:${list1}">
             <td th:text="${p.userid}"/>
             <td th:text="${p.username}"/>
+            <td><a th:href="@{'/delete/'+${p.id}}">삭제</a></td>
         </tr>
     </table>
 </div>

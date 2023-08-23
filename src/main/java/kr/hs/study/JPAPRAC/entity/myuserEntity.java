@@ -1,5 +1,6 @@
 package kr.hs.study.JPAPRAC.entity;
 
+import kr.hs.study.JPAPRAC.dto.myuserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor  // 기본생성자
 @AllArgsConstructor
+//@Table(name = "myuser")
 public class myuserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,4 +24,5 @@ public class myuserEntity {
 
     @Column
     private String username;
+
 }

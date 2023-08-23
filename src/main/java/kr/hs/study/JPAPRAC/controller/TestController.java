@@ -23,14 +23,6 @@ public class TestController {
     @PostMapping("/add_done")
     public String add_done(myuserDTO dto) {
         service.insert(dto);
-        return "redirect:/write";
-    }
-
-    @GetMapping("/list")
-    public String list_All(Model model) {
-        List<myuserDTO> list2 = service.list();
-        System.out.println("size: "+list2.size());
-        model.addAttribute("list1", list2);
-        return "result";
+        return "redirect:/";
     }
 }

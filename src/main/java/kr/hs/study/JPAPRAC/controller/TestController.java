@@ -32,4 +32,18 @@ public class TestController {
         service.delete(id);
         return "redirect:/";
     }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") Long id, Model model) {
+        myuserDTO dto = service.view(id);
+        model.addAttribute("dto", dto);
+        return "update";
+    }
+
+    @PostMapping("/update_done/{id}")
+    public String update2(@PathVariable("id") Long id, myuserDTO dto) {
+        service.update(id, dto);
+        return "redirect:/";
+    }
+
 }

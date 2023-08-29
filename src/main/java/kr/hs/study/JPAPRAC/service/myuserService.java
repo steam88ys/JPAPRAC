@@ -9,4 +9,7 @@ public interface myuserService {
     public List<myuserDTO> list();
 
     public void delete(Long id);
+
+    public myuserDTO view(Long id);
+    public void update(Long id, myuserDTO dto);
 }

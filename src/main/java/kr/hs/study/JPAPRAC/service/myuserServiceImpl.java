@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class myuserServiceImpl implements myuserService {
@@ -43,4 +44,19 @@ public class myuserServiceImpl implements myuserService {
     public void delete(Long id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public myuserDTO view(Long id) {
+        myuserEntity me = repo.findById(id).get();
+        // entity -> dto로 변환
+        myuserDTO d = me.toDTO(me);
+        return d;
+    }
+
+    public void update(Long id, myuserDTO dto) {
+        repo.findById(id);
+        myuserEntity me = dto.toEntity(dto);
+        repo.save(me);
+    }
+
 }

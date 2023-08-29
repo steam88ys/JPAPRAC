@@ -24,5 +24,15 @@ public class myuserEntity {
 
     @Column
     private String username;
+    
+    // entity -> dto로 변환하는 방법
+    public myuserDTO toDTO(myuserEntity e) {
+        myuserDTO dto = myuserDTO.builder()
+                .id(e.getId())
+                .userid(e.getUserid())
+                .username(e.getUsername())
+                .build();
+        return dto;
+    }
 
 }

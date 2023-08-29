@@ -15,7 +15,10 @@
         <tr th:each="p:${list1}">
             <td th:text="${p.userid}"/>
             <td th:text="${p.username}"/>
-            <td><a th:href="@{'/delete/'+${p.id}}">삭제</a></td>
+            <td>
+                <a th:href="@{'/update/'+${p.id}}">수정</a>
+                <a th:href="@{'/delete/'+${p.id}}">삭제</a>
+            </td>
         </tr>
     </table>
 </div>
